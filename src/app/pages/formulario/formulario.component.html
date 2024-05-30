@@ -1,0 +1,31 @@
+<body class="max-w-4xl mx-auto px-4 py-2 sm:p-6 md:p-8">
+    <h1 class="mb-6 text-2xl font-bold bg-teal-700 text-white border border-gray-300 rounded-md pl-2 py-1">Vamos a
+        conquistar el mundo</h1>
+    <div>
+        <form [formGroup]="mForm"
+            class="w-full rounded-md border border-gray-300 px-4 py-1 focus:border-primary focus:ring-primary">
+            <div class="p-3">
+                <label for="ciudad" class="m-4">Ciudad que desea añadir:</label>
+                <input formControlName="ciudad" type="text" name="ciudad"
+                    class=" w-full rounded-md border border-gray-300 px-4 py-1 focus:border-primary focus:ring-primary">
+            </div>
+            <div class="p-3">
+                <label for="pais" class="m-4">País en el que se encuentra:</label>
+                <input formControlName="pais" type="text" name="pais"
+                    class="w-full rounded-md border border-gray-300 px-4 py-1 focus:border-primary focus:ring-primary">
+            </div>
+            <div class="p-3">
+                <label for="mes" class="m-4">Mejor mes para visitarla:</label>
+                <input formControlName="mes" type="text" name="mes"
+                    class="w-full rounded-md border border-gray-300 px-4 py-1 focus:border-primary focus:ring-primary">
+            </div>
+            <button (click)="enviar(mForm.value)" [disabled]="!mForm.valid" type="submit"
+                class="disabled:bg-gray-200 bg-teal-200 rounded-md w-40 m-2 border border-gray-300 hover:opacity-80 hover:bg-teal-400">
+                Añadir
+            </button>
+        </form>
+    </div>
+</body>
+@for (item of cities; track cities[0].ciudad) {
+<app-lista [elemento]="item"></app-lista>
+}

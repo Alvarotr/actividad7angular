@@ -1,0 +1,19 @@
+@if (mostrar) {
+
+<body class="max-w-4xl mx-auto px-4 py-1 sm:p-3 md:p-4">
+    <div class="w-full flex items-center gap-2 rounded-md bg-gray-100  dark:bg-gray-800 border border-gray-500">
+        <div class="bg-gray-100 rounded-lg py-2 pl-7">
+            <div class="text-lg font-medium">
+                {{elemento.ciudad}}, {{elemento.pais}}
+            </div>
+            <div class="text-gray-600">
+                Debes visitarla en {{elemento.mes}}
+            </div>
+            <input type="checkbox" name="visitadas" class="m-1 ">
+            <label for="visitadas" class="text-gray-600">Visitada</label>
+            <button (click)="eliminar(elemento)"
+                class="bg-rose-200 rounded-md w-20 m-2 border hover:opacity-80 hover:bg-rose-400">Eliminar</button>
+        </div>
+    </div>
+</body>
+}
